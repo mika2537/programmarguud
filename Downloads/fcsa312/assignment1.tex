@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[mongolian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx} %зураг
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\usepackage{anysize}
+\marginsize{3cm}{1.5cm}{2cm}{2cm}
+
+%\usepackage{lineno}
+
+%Бүлгийн нэрийг дарж дугаарлан гаргах
+\usepackage{titlesec}
+\titleformat{\chapter}{\normalfont\Large\bfseries}{\thechapter.}{12pt}{\normalfont\bfseries}
+\titlespacing{\chapter}{0pt}{0pt}{0pt}
+
+\fontfamily{TimesNewRoman}
+
+%Мөр хоорондын зай 1.15
+\renewcommand{\baselinestretch}{1.15} 
+\newcommand{\tab}{\hspace{1cm}}
+
+
+\usepackage{longtable}
+\usepackage{caption}
+
+\usepackage{hyperref} %Удиртгалыг гарчигт оруулахгүй. \phantomsection
+
+\begin{document}
+	
+	\pagenumbering{roman} % Агуулгын өмнөх хуудас дугаарлалт: i, ii, iii, iv... г.м.
+	\pagestyle{plain} % Гол загварыг дуудах хүртэлх толгой мөрийн суурь загвар
+	
+	\include{FrontBackMatter/Titlepage} % Нүүр хуудас
+	
+	%-------------------------------------------------------------------------------
+	%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+	%-------------------------------------------------------------------------------
+	
+	\tableofcontents % Гарчиг хэвлэх
+	\newpage
+	\listoffigures % Зургийн жагсаалт хэвлэх
+	\newpage
+	\listoftables % Хүснэгтийн жагсаалт хэвлэх
+	\newpage
+	
+	%-------------------------------------------------------------------------------
+	%	SEMINAR CONTENT - CHAPTERS
+	%-------------------------------------------------------------------------------
+	\pagenumbering{arabic} % Хуудасны тоон (1,2,3...) дугаарлалт эхлэнэ
+	\include{Chapter/Introduction}
+	
+	\include{Chapter/Chapter1}
+	\include{Chapter/Chapter2}
+	\include{Chapter/Chapter3}
+    \include{Chapter/Chapter4}
+	
+	\bibliography{references}
+	\bibliographystyle{ieeetr}
+	
+\end{document}
